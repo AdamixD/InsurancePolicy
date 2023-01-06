@@ -1,6 +1,5 @@
 package com.example.InsurancePolicy.client.mapper;
 
-
 import com.example.InsurancePolicy.client.dto.ClientDTO;
 import com.example.InsurancePolicy.client.entity.Client;
 import com.example.InsurancePolicy.general.EntityMapper;
