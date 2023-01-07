@@ -1,13 +1,9 @@
 package com.example.InsurancePolicy.client.service;
 
 import com.example.InsurancePolicy.client.dto.AccidentParticipantDTO;
-import com.example.InsurancePolicy.client.dto.ClientDTO;
 import com.example.InsurancePolicy.client.entity.AccidentParticipant;
-import com.example.InsurancePolicy.client.entity.Client;
 import com.example.InsurancePolicy.client.mapper.AccidentParticipantMapper;
-import com.example.InsurancePolicy.client.mapper.ClientMapper;
 import com.example.InsurancePolicy.client.repository.AccidentParticipantRepository;
-import com.example.InsurancePolicy.client.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

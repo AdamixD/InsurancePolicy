@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,6 +17,7 @@ public class AccidentParticipant {
     @SequenceGenerator(name = "accidentParticipantIdGen", sequenceName = "accidentParticipant_id_seq", allocationSize = 1)
     private Long id;
     private Boolean isResponsible;
-    private Long personId;
+    @OneToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    private List<Person> persons;
     private String carNumber;
 }

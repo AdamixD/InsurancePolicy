@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -13,12 +14,17 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class Car {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "carIdGen")
-    @SequenceGenerator(name = "carIdGen", sequenceName = "car_id_seq", allocationSize = 1)
-    private Long id;
-    private String registrationNumber;
     private String vinNumber;
+    private String registrationNumber;
     private LocalDateTime manufactureYear;
-    private Long clientId; // TODO: przecież może mieć kilku właścicieli
-    private Long carModelId;
+    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "car_person",
+            joinColumns = @JoinColumn(name = "car_id"),
+            inverseJoinColumns = @JoinColumn(name = "person_id")
+    )
+    private List<Person> persons;
+    @ManyToOne(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "car_model_id")
+    private CarModel carModel;
 }

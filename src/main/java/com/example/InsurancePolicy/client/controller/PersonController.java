@@ -1,7 +1,7 @@
 package com.example.InsurancePolicy.client.controller;
 
-import com.example.InsurancePolicy.client.dto.ClientDTO;
-import com.example.InsurancePolicy.client.service.ClientService;
+import com.example.InsurancePolicy.client.dto.PersonDTO;
+import com.example.InsurancePolicy.client.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -9,50 +9,50 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping(path = "app/client/")
-public class ClientController {
-    private final ClientService clientService;
+@RequestMapping(path = "app/person/")
+public class PersonController {
+    private final PersonService personService;
 
     @GetMapping("all")
-    public ResponseEntity<?> getAllClients(){
+    public ResponseEntity<?> getAllPersons(){
         try{
-            return ResponseEntity.ok().body(clientService.getAllClients());
+            return ResponseEntity.ok().body(personService.getAllPersons());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<?> getClient(@PathVariable(value="id") Long id){
+    public ResponseEntity<?> getPerson(@PathVariable(value="id") Long id){
         try{
-            return ResponseEntity.ok().body(clientService.getClientById(id));
+            return ResponseEntity.ok().body(personService.getPersonById(id));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @PostMapping("add")
-    public ResponseEntity<?> addClient(@RequestBody ClientDTO client){
+    public ResponseEntity<?> addPerson(@RequestBody PersonDTO person){
         try{
-            return ResponseEntity.ok().body(clientService.addClient(client));
+            return ResponseEntity.ok().body(personService.addPerson(person));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @PutMapping("update/{id}")
-    public ResponseEntity<?> updateClient(@PathVariable(value="id") Long id, @RequestBody ClientDTO client){
+    public ResponseEntity<?> updatePerson(@PathVariable(value="id") Long id, @RequestBody PersonDTO person){
         try{
-            return ResponseEntity.ok().body(clientService.updateClientById(id, client));
+            return ResponseEntity.ok().body(personService.updatePersonById(id, person));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<?> deleteClient(@PathVariable(value="id") Long id){
+    public ResponseEntity<?> deletePerson(@PathVariable(value="id") Long id){
         try{
-            return ResponseEntity.ok().body(clientService.deleteClientById(id));
+            return ResponseEntity.ok().body(personService.deletePersonById(id));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

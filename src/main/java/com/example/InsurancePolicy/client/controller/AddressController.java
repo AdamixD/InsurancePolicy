@@ -1,9 +1,7 @@
 package com.example.InsurancePolicy.client.controller;
 
 import com.example.InsurancePolicy.client.dto.AddressDTO;
-import com.example.InsurancePolicy.client.dto.ClientDTO;
 import com.example.InsurancePolicy.client.service.AddressService;
-import com.example.InsurancePolicy.client.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

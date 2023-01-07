@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,5 +19,6 @@ public class Accident {
     private Long id;
     private String type;
     private LocalDateTime accidentDate;
-    private Long participantId; // TODO: według mnie tutaj powinna byc lista i to obiektów klasy AccidentParticipant
+    @OneToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    private List<AccidentParticipant> participants;
 }
