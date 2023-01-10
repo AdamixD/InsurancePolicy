@@ -9,6 +9,6 @@ public class CarModelDTO {
     private String brand;
     private String modelName;
     private String engineType;
-    private Integer modelGeneration;
-    private Float engineCapacity;
+    private Long modelGeneration;
+    private Long engineCapacity;
 }

@@ -13,8 +13,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class InsurancePolicy {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "insurancePolicyIdGen")
-    @SequenceGenerator(name = "insurancePolicyIdGen", sequenceName = "insurance_policy_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "insurancePolicyIdGen")
     private Long id;
     private Long insuranceAmount;
     private Long insurancePrice;

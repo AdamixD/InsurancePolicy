@@ -14,8 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "addressIdGen")
-    @SequenceGenerator(name = "addressIdGen", sequenceName = "address_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "addressIdGen")
     private Long id;
     private String street;
     private String postalCode;

@@ -11,12 +11,11 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class CarModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "carModelIdGen")
-    @SequenceGenerator(name = "carModelIdGen", sequenceName = "carModel_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "carModelIdGen")
     private Long id;
     private String brand;
     private String modelName;
     private String engineType;
-    private Integer modelGeneration;
-    private Float engineCapacity;
+    private Long modelGeneration;
+    private Long engineCapacity;
 }

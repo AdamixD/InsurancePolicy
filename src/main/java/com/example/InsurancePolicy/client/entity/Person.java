@@ -13,8 +13,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "personIdGen")
-    @SequenceGenerator(name = "personIdGen", sequenceName = "person_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "personIdGen")
     protected Long id;
     protected String name;
     protected String surname;

@@ -1,4 +1,4 @@
-package com.example.InsurancePolicy.client.mapper;
+package com.example.InsurancePolicy.client.mapper.service;
 
 import com.example.InsurancePolicy.client.entity.Address;
 import com.example.InsurancePolicy.client.repository.AddressRepository;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PersonMappingService {
+public class AddressMappingService {
     private final AddressRepository addressRepository;
 
     public Address getAddressById(Long id){

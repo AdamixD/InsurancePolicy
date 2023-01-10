@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class InsurancePolicyDTO {
     private Long insuranceAmount;
     private Long insurancePrice;
-    private Long vinNumber;
+    private String vinNumber;
     private LocalDateTime creationDate;
     private LocalDateTime expirationDate;
 }

@@ -1,9 +1,12 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:mydb
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
+    url: jdbc:oracle:thin:@//ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl
+    username: yharbar
+    password: yharbar
+  sql:
+    init:
+      data-locations: classpath:insert_data.sql
+      mode: always
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
   h2:
