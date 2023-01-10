@@ -13,8 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccidentParticipant {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accidentParticipantIdGen")
-    @SequenceGenerator(name = "accidentParticipantIdGen", sequenceName = "accidentParticipant_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "accidentParticipantIdGen")
     private Long id;
     private Boolean isResponsible;
     @OneToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)

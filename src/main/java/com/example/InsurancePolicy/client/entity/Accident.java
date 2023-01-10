@@ -14,8 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Accident {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accidentIdGen")
-    @SequenceGenerator(name = "accidentIdGen", sequenceName = "accident_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "accidentIdGen")
     private Long id;
     private String type;
     private LocalDateTime accidentDate;
