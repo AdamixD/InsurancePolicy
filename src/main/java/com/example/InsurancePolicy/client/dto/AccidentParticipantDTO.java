@@ -10,5 +10,5 @@ import java.util.List;
 public class AccidentParticipantDTO {
     private Boolean isResponsible;
     private List<Long> personIds;
-    private String carNumber;
+    private String vinNumber;
 }

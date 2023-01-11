@@ -15,4 +15,7 @@ import org.mapstruct.Mapping;
 public interface PersonMapper extends EntityMapper<PersonDTO, Person> {
     @Mapping(target="address", source="address_id")
     Person toEntity(PersonDTO dto);
+
+    @Mapping(target="address_id", source="address")
+    PersonDTO toDto(Person entity);
 }

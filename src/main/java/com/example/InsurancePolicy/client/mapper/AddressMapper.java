@@ -7,8 +7,5 @@ import com.example.InsurancePolicy.general.EntityMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring", uses = {AddressRepository.class})
-public interface AddressMapper extends EntityMapper<AddressDTO, Address> {
-    @Mapping(expression = "java(addressRepository.getById(id))", target = "Address.class")
-    Address toEntity(Long id);
-}
+@Mapper(componentModel = "spring")
+public interface AddressMapper extends EntityMapper<AddressDTO, Address> {}

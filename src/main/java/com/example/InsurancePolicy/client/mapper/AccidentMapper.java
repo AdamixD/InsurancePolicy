@@ -15,4 +15,6 @@ import org.mapstruct.Mapping;
 public interface AccidentMapper extends EntityMapper<AccidentDTO, Accident> {
     @Mapping(target="participants", source="participantIds")
     Accident toEntity(AccidentDTO dto);
+    @Mapping(target="participantIds", source="participants")
+    AccidentDTO toDto(Accident entity);
 }

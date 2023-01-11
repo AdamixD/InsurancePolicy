@@ -13,4 +13,8 @@ public class CarMapperService {
     public Car getCarById(String vinNumber) {
         return carRepository.getCarByVinNumber(vinNumber);
     }
+
+    public String getVinNumber(Car car) {
+        return car.getVinNumber();
+    }
 }

@@ -18,5 +18,7 @@ public class AccidentParticipant {
     private Boolean isResponsible;
     @OneToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
     private List<Person> persons;
-    private String carNumber;
+    @OneToOne(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "car_vinNumber")
+    private Car car;
 }

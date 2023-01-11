@@ -15,4 +15,7 @@ import org.mapstruct.Mapping;
 public interface InsurancePolicyMapper extends EntityMapper<InsurancePolicyDTO, InsurancePolicy> {
     @Mapping(target="car", source="vinNumber")
     InsurancePolicy toEntity(InsurancePolicyDTO dto);
+
+    @Mapping(target="vinNumber", source="car")
+    InsurancePolicyDTO toDto(InsurancePolicy entity);
 }
