@@ -20,4 +20,12 @@ public class PersonMapperService {
     public List<Long> getPersonsId(List<Person> personList) {
         return personList.stream().map(Person::getId).collect(Collectors.toList());
     }
+
+    public Person getPersonById(Long personId) {
+        return personRepository.getById(personId);
+    }
+
+    public Long getPersonId(Person person) {
+        return person.getId();
+    }
 }

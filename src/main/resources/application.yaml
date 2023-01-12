@@ -17,3 +17,7 @@ spring:
     show-sql: true
     defer-datasource-initialization: true
 
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
