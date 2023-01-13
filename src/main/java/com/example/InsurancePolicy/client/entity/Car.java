@@ -1,6 +1,7 @@
 package com.example.InsurancePolicy.client.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.util.List;
 public class Car {
     @Id
     private String vinNumber;
+    @NotNull
     private String registrationNumber;
     private LocalDateTime manufactureYear;
     @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)

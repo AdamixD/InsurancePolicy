@@ -1,8 +1,8 @@
 create table accident (
-  id number(19,0) generated as identity,
-  accident_date timestamp(6),
-  type varchar2(255 char),
-  primary key (id)
+    id number(19,0) generated as identity,
+    accident_date timestamp(6) not null,
+    type varchar2(255 char) not null,
+    primary key (id)
 );
 
 create table accident_participants (
@@ -12,7 +12,7 @@ create table accident_participants (
 
 create table accident_participant (
   id number(19,0) generated as identity,
-  is_responsible number(1,0),
+  is_responsible number(1,0) not null,
   car_vin_number varchar2(255 char),
   primary key (id)
 );
@@ -43,7 +43,7 @@ create table address_history (
 create table car (
      vin_number varchar2(255 char) not null,
      manufacture_year timestamp(6),
-     registration_number varchar2(255 char),
+     registration_number varchar2(255 char) not null,
      car_model_id number(19,0),
      primary key (vin_number)
 );
@@ -65,8 +65,8 @@ create table car_model (
 
 create table insurance_policy (
     id number(19,0) generated as identity,
-    creation_date timestamp(6),
-    expiration_date timestamp(6),
+    creation_date timestamp(6) not null,
+    expiration_date timestamp(6) not null,
     insurance_amount number(19,0),
     insurance_price number(19,0),
     car_vin_number varchar2(255 char),
@@ -77,8 +77,8 @@ create table person (
     id number(19,0) generated as identity,
     birth_date timestamp(6),
     driving_licence_date timestamp(6),
-    name varchar2(255 char),
-    surname varchar2(255 char),
+    name varchar2(255 char) not null,
+    surname varchar2(255 char) not null,
     address_id number(19,0),
     primary key (id)
 );
